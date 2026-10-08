@@ -13,7 +13,7 @@
   "supportUrl": "https://github.com/antiagree/antiagree/issues",
   "privacyPolicyUrl": "https://github.com/antiagree/antiagree#privacy",
   "license": "MIT",
-  "icon": "./assets/icon.png",
+  "icon": "https://raw.githubusercontent.com/antiagree/antiagree/main/assets/icon.png",
   "keywords": [
     "anti-sycophancy",
     "sycophancy",

@@ -1,5 +1,3 @@
-<p align="center"><img src="assets/icon.png" width="128" alt="antiagree logo"></p>
-
 <h1 align="center">antiagree</h1>
 
 antiagree is a Claude skill that reviews your idea, plan, architecture, benchmark or decision the way an outside reviewer with no stake in it would. It checks your claims against the code and the data, looks for what already exists, tries to kill the proposal with the strongest argument it can find, and keeps only what survives.
