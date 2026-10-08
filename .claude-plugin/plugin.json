@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "antiagree",
+  "displayName": "antiagree",
+  "version": "0.1.0",
+  "description": "antiagree makes Claude check your plan against the code and the data, look for prior art, try to kill the idea and keep only what survives: a GO / ITERATE / RETHINK / KILL verdict, kill criteria and the cheapest experiment that settles it.",
+  "author": {
+    "name": "Iván Luna",
+    "url": "https://github.com/imprvhub"
+  },
+  "homepage": "https://github.com/antiagree/antiagree",
+  "repository": "https://github.com/antiagree/antiagree",
+  "supportUrl": "https://github.com/antiagree/antiagree/issues",
+  "privacyPolicyUrl": "https://github.com/antiagree/antiagree#privacy",
+  "license": "MIT",
+  "icon": "./assets/icon.png",
+  "keywords": [
+    "anti-sycophancy",
+    "sycophancy",
+    "brutal-honesty",
+    "honest-feedback",
+    "reality-check",
+    "second-opinion",
+    "devils-advocate",
+    "critique",
+    "critical-thinking",
+    "decision-making",
+    "decision",
+    "plan-review",
+    "architecture-review",
+    "design-review",
+    "idea-validation",
+    "stress-test",
+    "premortem",
+    "risk-assessment",
+    "go-no-go",
+    "kill-criteria",
+    "claude-code",
+    "claude-skills",
+    "agent-skills"
+  ]
+}

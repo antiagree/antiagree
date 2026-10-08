@@ -1,0 +1,15 @@
+{
+  "name": "antiagree",
+  "description": "antiagree: a Claude skill that challenges your ideas, plans and decisions.",
+  "owner": {
+    "name": "Iván Luna",
+    "url": "https://github.com/imprvhub"
+  },
+  "plugins": [
+    {
+      "name": "antiagree",
+      "source": "./",
+      "description": "Challenge your ideas, plans and decisions: GO, ITERATE, RETHINK or KILL."
+    }
+  ]
+}
