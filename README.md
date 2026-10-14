@@ -28,7 +28,13 @@ It doesn't fake harshness. When your plan is sound, it says **GO**.
 
 ## Install
 
-**Claude Code:**
+**Claude plugin directory:** in the Claude desktop app, Customize → Plugins → Discover → antiagree. In Claude Code:
+
+```
+claude plugin install antiagree@anthropic-plugin-directory
+```
+
+**Claude Code, from this repository:**
 
 ```
 /plugin marketplace add antiagree/antiagree

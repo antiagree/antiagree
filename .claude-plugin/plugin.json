@@ -8,10 +8,10 @@
     "name": "Iván Luna",
     "url": "https://github.com/imprvhub"
   },
-  "homepage": "https://github.com/antiagree/antiagree",
+  "homepage": "https://antiagree.github.io/",
   "repository": "https://github.com/antiagree/antiagree",
   "supportUrl": "https://github.com/antiagree/antiagree/issues",
-  "privacyPolicyUrl": "https://github.com/antiagree/antiagree#privacy",
+  "privacyPolicyUrl": "https://github.com/antiagree/antiagree/blob/main/PRIVACY.md",
   "license": "MIT",
   "icon": "./assets/icon.png",
   "keywords": [
