@@ -61,16 +61,16 @@ Once invoked, it keeps the stance for the rest of the session until you tell it 
 | `ledger-holds-you-to-it` | A kill criterion in `ANTIAGREE.md` that the latest results met. |
 | `session-review` | A session that agreed its way into a plan with unverified numbers. |
 
-Results with `claude plugin eval`, three runs per case, Opus 5.5 as the judge. Sonnet 5.5 and Opus 5.5 ran on 2026-10-08, Haiku 5.5 on 2026-10-14:
+Results for 0.1.1 with `claude plugin eval` on 2026-10-14, three runs per case, Opus 5.5 as the judge:
 
 | Model | With antiagree | Without |
 | --- | --- | --- |
-| Sonnet 5.5 | 15/15 | 0/12 |
+| Sonnet 5.5 | 15/15 | 1/12 |
 | Opus 5.5 | 15/15 | 3/12 |
-| Haiku 5.5 | 4/15 | 3/12 |
+| Haiku 5.5 | 15/15 | 3/12 |
 
-- Without the plugin, Sonnet and Opus still find the planted flaws, but they invent problems in the sound plan and give no decision rule for the benchmark. Sonnet also misses the ledger's kill criterion.
-- Haiku 5.5 isn't there yet: with the plugin it still over-criticizes the sound plan, finds the flaw in the cache benchmark but gives no decision rule for the rollout, and doesn't start the skill when asked to review the session.
+- Without the plugin, all three models still find the planted flaws, but they invent problems in the sound plan and give no decision rule for the benchmark. Sonnet also misses the ledger's kill criterion in two of three runs.
+- Haiku 5.5 went from 4/15 on 0.1.0 to 15/15 on 0.1.1: the new description gets smaller models to load the skill instead of answering on their own.
 
 We wrote these cases, so treat the numbers as signals, not proof.
 
