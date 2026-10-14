@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "antiagree",
   "displayName": "antiagree",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "antiagree makes Claude check your plan against the code and the data, look for prior art, try to kill the idea and keep only what survives: a GO / ITERATE / RETHINK / KILL verdict, kill criteria and the cheapest experiment that settles it.",
   "author": {
     "name": "Iván Luna",
