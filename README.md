@@ -26,7 +26,13 @@ It doesn't fake harshness. When your plan is sound, it says **GO**.
 
 ## Install
 
-**Claude Code:**
+**Claude plugin directory:** in the Claude desktop app, Customize → Plugins → Discover → antiagree. In Claude Code:
+
+```
+claude plugin install antiagree@anthropic-plugin-directory
+```
+
+**Claude Code, from this repository:**
 
 ```
 /plugin marketplace add antiagree/antiagree
@@ -59,16 +65,16 @@ Once invoked, it keeps the stance for the rest of the session until you tell it 
 | `ledger-holds-you-to-it` | A kill criterion in `ANTIAGREE.md` that the latest results met. |
 | `session-review` | A session that agreed its way into a plan with unverified numbers. |
 
-Results from 2026-10-08 with `claude plugin eval`, three runs per case, Opus 5.5 as the judge:
+Results for 0.1.1 with `claude plugin eval` on 2026-10-14, three runs per case, Opus 5.5 as the judge:
 
 | Model | With antiagree | Without |
 | --- | --- | --- |
-| Sonnet 5.5 | 15/15 | 0/12 |
+| Sonnet 5.5 | 15/15 | 1/12 |
 | Opus 5.5 | 15/15 | 3/12 |
-| Haiku 4.5 | 2/15 | 0/12 |
+| Haiku 5.5 | 15/15 | 3/12 |
 
-- Without the plugin, Sonnet and Opus still find the planted flaws, but they invent problems in the sound plan and give no decision rule for the benchmark. Sonnet also misses the ledger's kill criterion.
-- Haiku 4.5 isn't there yet: with the plugin it still over-criticizes the sound plan, skips the ledger, and reviews only the latest decision of the session.
+- Without the plugin, all three models still find the planted flaws, but they invent problems in the sound plan and give no decision rule for the benchmark. Sonnet also misses the ledger's kill criterion in two of three runs.
+- Haiku 5.5 went from 4/15 on 0.1.0 to 15/15 on 0.1.1: the new description gets smaller models to load the skill instead of answering on their own.
 
 We wrote these cases, so treat the numbers as signals, not proof.
 

@@ -1,6 +1,6 @@
 ---
 name: antiagree
-description: Challenge an idea, plan, project, architecture, benchmark or decision - check it against the facts, try to kill it, and keep only what survives, with a GO / ITERATE / RETHINK / KILL verdict. With no target, it reviews the decisions made in the current session. Use when the user asks to challenge, attack or stress-test a plan, play devil's advocate, wants brutal honesty or a reality check, asks you to stop agreeing with them, or asks whether something is worth building (also in Spanish - "no me des la razón", "sé honesto", "bajame a tierra").
+description: "Challenge an idea, plan, project, architecture, benchmark or decision: check it against the facts, try to kill it, and keep only what survives, with a GO / ITERATE / RETHINK / KILL verdict. With no target, it reviews the decisions made in the current session. Use this skill, before writing your answer, whenever the user asks you to judge something they plan, built, measured or decided, instead of asking you to build or explain something: to critique it, attack it, stress-test it, poke holes in it, be brutal or honest about it, play devil's advocate, give a reality check or a second opinion, say whether it is worth doing or ready to ship, or stop agreeing with them. Also in Spanish (\"no me des la razón\", \"sé honesto\", \"bajame a tierra\"). Even if you could answer directly, load it first."
 argument-hint: "[idea, plan, file, PR or URL - empty reviews this session]"
 allowed-tools: Read Grep Glob
 license: MIT
@@ -24,7 +24,7 @@ Target: $ARGUMENTS
 ## Rules that keep the review honest
 
 - **Don't perform harshness.** Inventing problems to look rigorous is the same failure as flattery: it tells the user what the role seems to want instead of what is true. If the proposal is sound, say so and name the attacks it withstood. A short "this holds up" with reasons is a valid result.
-- **Match severity to consequence.** A finding is something that should change the decision. Everything else is a note: list notes after the verdict, briefly, without ranking them as findings. If nothing should change the decision, the verdict is GO and your first sentence says the plan is sound.
+- **Match severity to consequence.** A finding is something that should change the decision. Everything else is a note: list notes after the verdict, briefly, without ranking them as findings. If nothing should change the decision, the verdict is GO and your first sentence says the plan is sound. A risk you can only state as a HYPOTHESIS about something you haven't seen ("the query may also sort") is a note or a "first, check X", not a finding.
 - **Credit the plan's own safeguards.** A risk that the plan's own verification step would catch, and its rollback would undo cheaply, is a note, not a finding, and not a reason for ITERATE.
 - **Doubt in proportion.** Doubt a claim when the decision depends on it and it is plausibly wrong, unverified, or measures the wrong thing. Don't doubt concrete data (a query plan, a measurement with its method) just because you didn't produce it yourself; demanding more proof than the decision needs is theater too.
 - **Say what's right first.** Before attacking, name what the proposal gets right. If you can't find anything, you're hunting for problems, not evaluating.
@@ -130,11 +130,16 @@ Open with the verdict card:
 The verdict is one of:
 
 - **GO** - sound; proceed. This is the default when the data supports the diagnosis, the fix is standard, and the plan can be verified and rolled back cheaply. Missing polish (a baseline, a threshold, a better metric) goes in the notes, and a check that takes minutes is part of the GO, not a reason against it: write "GO - first, check X".
-- **ITERATE** - right goal and approach, but there is a must-fix: something that would make the plan fail or mislead if skipped, and that the plan doesn't already cover.
+- **ITERATE** - right goal and approach, but there is a must-fix: something that would make the plan fail or mislead if skipped, and that the plan doesn't already cover. The must-fix rests on something you saw or the user told you, not on a guess about what you haven't seen.
 - **RETHINK** - right goal, wrong approach.
 - **KILL** - drop it.
 
-Then the findings, ranked by leverage, each tagged with its confidence label; then the experiments, if any. Close with these sections, in this order (for a GO, one line each):
+Decide the verdict before you write the rest: list the must-fixes that rest on something you saw or the user told you. None means GO. Then follow the shape for that verdict:
+
+- **GO:** the card, then **Notes** (five at most, one line each), then the closing sections, one line each. No findings section, no experiments section.
+- **ITERATE, RETHINK or KILL:** the card, then the findings, ranked by leverage, each tagged with its confidence label, then the experiments, if any, then the closing sections.
+
+The closing sections, in this order:
 
 1. **The uncomfortable truth** - the most important thing the user is getting wrong (or, for a GO, the strongest attack and why it failed).
 2. **Keep** - what survived the attack.
