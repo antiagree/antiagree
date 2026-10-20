@@ -78,7 +78,7 @@ Results for 0.1.1 with `claude plugin eval` on 2026-10-14, three runs per case, 
 - Without the plugin, all three models still find the planted flaws, but they invent problems in the sound plan and give no decision rule for the benchmark. Sonnet also misses the ledger's kill criterion in two of three runs.
 - Haiku 5.5 went from 4/15 on 0.1.0 to 15/15 on 0.1.1: the new description gets smaller models to load the skill instead of answering on their own.
 
-We wrote these cases, so treat the numbers as signals, not proof.
+The author wrote these cases, so treat the numbers as signals, not proof.
 
 ## Privacy
 
