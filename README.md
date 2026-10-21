@@ -21,7 +21,7 @@ It doesn't fake harshness. When your plan is sound, it says **GO**.
 - **Reads before it judges.** It reads the code, data, benchmarks and git history before judging, and labels every claim: FACT, STRONGLY SUPPORTED, HYPOTHESIS or SPECULATION. No invented percentages.
 - **Reviews your session.** Run `/antiagree` with nothing after it and it audits the decisions you and Claude made in this conversation: what was verified, what was only agreed to, and where the goal drifted. It declares that it's anchored, because it helped make those decisions.
 - **Checks whether it already exists.** Before you build something, it searches for prior art and asks what is actually different.
-- **Holds you to your kill criteria.** It can record experiments and their GO / KILL thresholds in `ANTIAGREE.md`. The next review reads them first, so you can't move the bar after the result is in.
+- **Holds you to your kill criteria.** It can record experiments and their GO / KILL thresholds in `ANTIAGREE.md`. The next review reads them first, so you can't move the bar after the result is in, and it marks each one passed, met, killed or expired as the results come in.
 - **Gives a verdict, not a list.** GO, ITERATE, RETHINK or KILL; the biggest risk; the cheapest experiment that settles the question; and the one fact that would change its mind. It closes with the uncomfortable truth, what to keep, what to change, what not to build, and what's still unknown.
 - **Calibrated.** It names what your plan gets right before attacking it, credits the safeguards you already built in, and doesn't demand more proof than the decision needs.
 - **Answers in your language.** `no me des la razón` works too.
@@ -53,7 +53,7 @@ claude plugin install antiagree@anthropic-plugin-directory
 
 Or just ask: "attack my plan", "be brutally honest", "don't just agree with me".
 
-Once invoked, it keeps the stance for the rest of the session until you tell it to stop.
+Once invoked, it keeps the stance for the rest of the session, until you say "antiagree off" or "stop".
 
 ## Evals
 
@@ -78,7 +78,12 @@ Results for 0.1.1 with `claude plugin eval` on 2026-10-14, three runs per case, 
 - Without the plugin, all three models still find the planted flaws, but they invent problems in the sound plan and give no decision rule for the benchmark. Sonnet also misses the ledger's kill criterion in two of three runs.
 - Haiku 5.5 went from 4/15 on 0.1.0 to 15/15 on 0.1.1: the new description gets smaller models to load the skill instead of answering on their own.
 
-The author wrote these cases, so treat the numbers as signals, not proof.
+The five cases are in `evals/`, so you can run them on your own account with `claude plugin eval` and compare.
+
+## Also by the author
+
+- [ThinWindow](https://thinwindow.github.io/): keeps long Claude Code sessions cheap. It trims oversized reads and logs, and shows what an expired session costs before you pay it.
+- [nudgeist](https://nudgeist.github.io/): before an expensive model takes your message, a fast one checks whether a lighter model would do, and asks you first.
 
 ## Privacy
 
