@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "antiagree",
   "displayName": "antiagree",
-  "version": "0.1.1",
-  "description": "antiagree makes Claude check your plan against the code and the data, look for prior art, try to kill the idea and keep only what survives: a GO / ITERATE / RETHINK / KILL verdict, kill criteria and the cheapest experiment that settles it.",
+  "version": "0.2.0",
+  "description": "A reviewer with no stake in your plan. It checks the plan against your code and data, looks for prior art, tries to kill it, and gives a GO / ITERATE / RETHINK / KILL verdict with the cheapest experiment that settles it.",
   "author": {
     "name": "Iván Luna",
     "url": "https://github.com/imprvhub"
