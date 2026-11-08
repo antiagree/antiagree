@@ -55,7 +55,7 @@ Once invoked, it keeps the stance for the rest of the session, until you say "an
 
 ## Evals
 
-`evals/` holds five cases for `claude plugin eval`. Four run with and without the plugin; `session-review` runs with the plugin only.
+[`evals/`](https://github.com/antiagree/antiagree/tree/main/evals) holds five cases for `claude plugin eval`. Four run with and without the plugin; `session-review` runs with the plugin only.
 
 | Case | What it tests |
 | --- | --- |
@@ -76,7 +76,7 @@ Results for 0.1.1 with `claude plugin eval` on 2026-10-14, three runs per case, 
 - Without the plugin, all three models still find the planted flaws, but they invent problems in the sound plan and give no decision rule for the benchmark. Sonnet also misses the ledger's kill criterion in two of three runs.
 - Haiku 5.5 went from 4/15 on 0.1.0 to 15/15 on 0.1.1: the new description gets smaller models to load the skill instead of answering on their own.
 
-The five cases are in `evals/`, so you can run them on your own account with `claude plugin eval` and compare.
+The five cases are in [`evals/`](https://github.com/antiagree/antiagree/tree/main/evals), so you can run them on your own account with `claude plugin eval` and compare.
 
 ## Also by the author
 

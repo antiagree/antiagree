@@ -44,7 +44,7 @@ jobs:
       - name: Check manifests, skill and eval cases
         shell: python
         run: |
-          import json, pathlib, re, sys, yaml
+          import json, os, pathlib, re, sys, yaml
 
           errors = []
           root = pathlib.Path(".")
@@ -91,8 +91,11 @@ jobs:
               if not body.strip():
                   errors.append(f"{skill}: empty body")
 
-          cases = sorted(p for p in (root / "evals").iterdir() if p.is_dir() and p.name != "results")
-          if not cases:
+          # The directory branch ships the skill without its eval cases.
+          evals = root / "evals"
+          on_directory = os.environ.get("GITHUB_REF_NAME") == "directory"
+          cases = sorted(p for p in evals.iterdir() if p.is_dir() and p.name != "results") if evals.is_dir() else []
+          if not cases and not on_directory:
               errors.append("evals: no cases found")
           for case in cases:
               prompt, spec = case / "prompt.md", case / "case.yaml"
