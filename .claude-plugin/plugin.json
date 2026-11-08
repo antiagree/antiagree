@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "antiagree",
   "displayName": "antiagree",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A reviewer with no stake in your plan. It checks the plan against your code and data, looks for prior art, tries to kill it, and gives a GO / ITERATE / RETHINK / KILL verdict with the cheapest experiment that settles it.",
   "author": {
     "name": "Iván Luna",
